@@ -8,6 +8,27 @@ from urllib.parse import urlparse
 from django.http import JsonResponse, HttpResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 import requests
+from web3 import Web3
+
+ganache_url = "HTTP://127.0.0.1:7545"
+web3 = Web3(Web3.HTTPProvider(ganache_url))
+act1 = web3.eth.account.from_key("0x60e63c2f38e832b18b69e260ca9faeca1523d1fcb77c9f9a672d6a9e0b572812")
+test_address = "0xef4f179C78cfC13aA83e0a15e88Ea9b2536F805a"
+
+transaction = {
+    'from': act1.address,
+    'to': test_address,
+    'value': 1000000000,
+    'nonce': web3.eth.get_transaction_count(act1.address),
+    'gas': 250000,
+    'gasPrice': web3.to_wei(8,'gwei'),
+}
+signed = web3.eth.account.sign_transaction(transaction, "0x60e63c2f38e832b18b69e260ca9faeca1523d1fcb77c9f9a672d6a9e0b572812")
+
+tx_hash = web3.eth.send_raw_transaction(signed.rawTransaction)
+tx = web3.eth.get_transaction(tx_hash)
+assert tx['from'] == act1.address
+
 
 class Blockchain:
     def __init__(self):
