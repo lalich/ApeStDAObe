@@ -9,8 +9,9 @@ print(web3.is_connected())
 
 
 api_key = "QercoCAZywTkeKevoZC08gBJjPLRd7xN6aV88RZ5asiMv9r3tk762Hrj7pMEw6zE"
+block_num = str(web3.eth.block_number)
 params = {
-    "block_number_or_hash": "18302136",
+    "block_number_or_hash": block_num,
     "chain": "eth", 
     "include": "internal_transactions", 
 }
@@ -20,4 +21,4 @@ result = evm_api.block.get_block(
     params=params,
 )
 
-print(json.dumps(result, indent=4))
+print(json.dumps(result, indent=4), block_num)
