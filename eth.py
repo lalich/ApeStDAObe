@@ -2,6 +2,7 @@ from web3 import Web3, AsyncWeb3
 from moralis import evm_api
 import json
 
+## test connection to Eth and get last block data
 infura_url = "https://mainnet.infura.io/v3/6701ea4f70654045aab51734e07e1caa"
 web3 = Web3(Web3.HTTPProvider(infura_url))
 

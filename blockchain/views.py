@@ -5,11 +5,12 @@ import json
 from uuid import uuid4
 import socket
 from urllib.parse import urlparse
-from django.http import JsonResponse, HttpResponse, HttpRequest
+from django.http import JsonResponse, HttpResponse, HttpRequest, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 import requests
 from web3 import Web3
 
+## Transaction on the ganache test chain
 ganache_url = "HTTP://127.0.0.1:7545"
 web3 = Web3(Web3.HTTPProvider(ganache_url))
 act1 = web3.eth.account.from_key("0x60e63c2f38e832b18b69e260ca9faeca1523d1fcb77c9f9a672d6a9e0b572812")

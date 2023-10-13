@@ -6,6 +6,7 @@ from flask_cors import CORS
 mma = Flask(__name__)
 CORS(mma)
 
+## Moralis api to connect to Eth, and the wallets for transactions.
 api_key = "QercoCAZywTkeKevoZC08gBJjPLRd7xN6aV88RZ5asiMv9r3tk762Hrj7pMEw6zE"
 
 @mma.route('/requestChallenge', methods=["GET"])
