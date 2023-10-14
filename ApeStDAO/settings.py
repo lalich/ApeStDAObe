@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blockchain',
+    'crispy_forms',
+    'crispy_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -76,11 +78,22 @@ WSGI_APPLICATION = 'ApeStDAO.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dee0ijnni3b23t',
+        'USER': 'miyeriikeerari',
+        'PASSWORD': 'b5f84def1d3f0be9816db1ed62b4a05fb8e70c56ca88985e00b7ec89391ccafa',
+        'HOST': 'ec2-54-208-11-146.compute-1.amazonaws.com',
+        'PORT': '5432'
+
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

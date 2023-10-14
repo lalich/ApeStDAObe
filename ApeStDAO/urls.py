@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from blockchain import views
 from blockchain.views import *
+from blockchain import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path('add_transaction', views.add_transaction, name='add_transaction'),
     path('connect_node', views.connect_node, name='connect_node'),
     path('replace_chain', views.replace_chain, name='replace_chain'),
+    path('', include('blockchain.urls')),
+    path('', include('django.contrib.auth.urls')),
+    
 ]

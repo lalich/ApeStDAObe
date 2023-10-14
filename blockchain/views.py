@@ -31,6 +31,9 @@ tx = web3.eth.get_transaction(tx_hash)
 assert tx['from'] == act1.address
 
 
+def home(request):
+        return render(request, 'blockchain/home.html')
+
 class Blockchain:
     def __init__(self):
         self.chain = []
