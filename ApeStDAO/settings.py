@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'ApeStDAO.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dee0ijnni3b23t',
-        'USER': 'miyeriikeerari',
-        'PASSWORD': 'b5f84def1d3f0be9816db1ed62b4a05fb8e70c56ca88985e00b7ec89391ccafa',
-        'HOST': 'ec2-54-208-11-146.compute-1.amazonaws.com',
+        'NAME': 'd6jjlqlpgertv7',
+        'USER': 'bakmlmhnziujxa',
+        'PASSWORD': '3c7a5cb91b94f8291b7b75e59388a95cbd2b397bb998eb19686006fc4ce714cc',
+        'HOST': 'ec2-54-83-138-228.compute-1.amazonaws.com',
         'PORT': '5432'
 
     }
