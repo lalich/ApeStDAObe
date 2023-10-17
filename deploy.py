@@ -9,8 +9,8 @@ abi = '[]'
 
 web3.eth.default_account = web3.eth.accounts[0]
 
-Chocolate = web3.eth.contract(abi=abi, bytecode=bytecode)
+ApeStFF = web3.eth.contract(abi=abi, bytecode=bytecode)
 
-tx_hash = Chocolate.constructor().transact()
+tx_hash = ApeStFF.constructor().transact()
 
 tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
