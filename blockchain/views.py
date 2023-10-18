@@ -100,7 +100,7 @@ class Blockchain:
     def add_node(self, address):
         parsed_url = urlparse(address)
         self.nodes.add(parsed_url.netloc)
-
+    
     def replace_chain(self): #New
         network = self.nodes
         longest_chain = None

@@ -29,7 +29,7 @@ urlpatterns = [
     path('replace_chain', views.replace_chain, name='replace_chain'),
     path('', include('blockchain.urls')),
     path('', include('django.contrib.auth.urls')),
-    path('create_apestff', views.create_apestff, name='create_apestff'),
+    path('apestff', views.create_apestff, name='apestff'),
     path('contract_details', views.get_apestd, name='contact_details'),
     
 ]
